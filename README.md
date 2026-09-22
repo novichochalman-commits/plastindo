@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PT YnW Multi Teknik Plastindo — Website Resmi
 
-## Getting Started
+Website company profile profesional untuk **PT YnW Multi Teknik Plastindo**, supplier dan distributor multi-produk untuk kebutuhan industri, manufaktur, dan alat berat di Bandar Lampung, Lampung, Indonesia.
 
-First, run the development server:
+🌐 **Website Live di GitHub Pages:**  
+[https://novichochalman-commits.github.io/Multi-Teknik-Plastindo/](https://novichochalman-commits.github.io/Multi-Teknik-Plastindo/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📌 Fitur Utama
+
+- **Katalog 5 Kategori Produk Industri:**
+  1. Plastik Umum & Industri
+  2. Spare Part Alat Berat
+  3. Hydraulic Hose & Hose Industri
+  4. Bearing Berbagai Tipe
+  5. V-Belt & Transmisi Mesin
+- **Formulir Penawaran & WhatsApp Otomatis:** Otomatis mengisi rincian produk dan merangkum pesan siap kirim ke WhatsApp resmi perusahaan.
+- **Unduh Dokumen Resmi:** File `company-profile.pdf` tersedia langsung di website.
+- **Zero Database & Zero Server:** Murni file HTML5, CSS3, dan JavaScript yang cepat, ringan, dan aman.
+
+---
+
+## 📁 Struktur Direktori
+
+```
+├── assets/
+│   ├── css/
+│   │   └── styles.css          # Desain modern & responsif
+│   ├── js/
+│   │   └── main.js             # Logika menu mobile & generator WhatsApp
+│   └── images/                 # Foto produk resolusi tinggi & logo
+├── index.html                  # Halaman Beranda
+├── tentang-kami.html           # Profil, Visi, Misi & Nilai Perusahaan
+├── produk.html                 # Katalog Semua Kategori
+├── produk-plastik.html         # Detail Plastik Industri
+├── produk-spare-part.html      # Detail Spare Part Alat Berat
+├── produk-hydraulic-hose.html  # Detail Hydraulic Hose
+├── produk-bearing.html         # Detail Bearing
+├── produk-v-belt.html          # Detail V-Belt & Transmisi
+├── kontak.html                 # Formulir Permintaan Penawaran
+├── company-profile.pdf         # File Company Profile Resmi PDF
+├── favicon.ico                 # Icon Tab Browser Resmi
+└── .nojekyll                   # Konfigurasi GitHub Pages
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📞 Kontak Perusahaan
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **WhatsApp:** +62 811-7976-0063
+- **Email:** yw.multiteknikplastindo@gmail.com
+- **Lokasi:** Bandar Lampung, Lampung, Indonesia
