@@ -40,6 +40,9 @@ export const company = {
   // ── Area Layanan ─────────────────────────────────────────
   serviceArea: "Bandar Lampung dan berbagai wilayah Indonesia sesuai kesepakatan",
 
+  // ── Dokumen PDF ──────────────────────────────────────────
+  pdfUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/company-profile.pdf`,
+
   // ── SEO & Metadata ───────────────────────────────────────
   domain: "https://ynwmultiteknik.com", // ⚠️ PERLU DILENGKAPI: domain resmi
   siteTitle: "PT YnW Multi Teknik Plastindo | Supplier Industri Bandar Lampung",
