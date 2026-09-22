@@ -6,6 +6,8 @@ const COMPANY_CONFIG = {
   name: "PT YnW Multi Teknik Plastindo",
   whatsapp: "6281179760063",
   whatsappDisplay: "+62 811-7976-0063",
+  whatsappWisnu: "6282376917339",
+  whatsappWisnuDisplay: "+62 823-7691-7339",
   email: "yw.multiteknikplastindo@gmail.com",
   address: "Bandar Lampung, Lampung, Indonesia"
 };
@@ -118,10 +120,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      const targetSelect = document.getElementById("quoteTarget");
+      const targetNumber = (targetSelect && targetSelect.value === "admin")
+        ? COMPANY_CONFIG.whatsapp
+        : COMPANY_CONFIG.whatsappWisnu;
+
+      const recipientName = (targetSelect && targetSelect.value === "admin")
+        ? COMPANY_CONFIG.name
+        : "Pak Wisnu (" + COMPANY_CONFIG.name + ")";
+
       // Format WhatsApp Message
       const lines = [
         `*PERMINTAAN PENAWARAN PRODUK*`,
-        `Halo ${COMPANY_CONFIG.name}, saya ingin meminta informasi dan penawaran harga:`,
+        `Halo ${recipientName}, saya ingin meminta informasi dan penawaran harga:`,
         ``,
         `*── DATA PEMESAN ──*`,
         `• *Nama:* ${name}`,
@@ -141,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ].filter(Boolean);
 
       const message = lines.join("\n");
-      const whatsappUrl = `https://wa.me/${COMPANY_CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(message)}`;
 
       // Inform user before opening
       alert("Format pesan penawaran telah disiapkan! Anda akan dialihkan ke WhatsApp. Silakan tekan tombol kirim di WhatsApp untuk menyelesaikan.");
