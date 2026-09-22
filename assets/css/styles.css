@@ -241,21 +241,35 @@ img, svg {
 
 .hamburger-btn {
   display: none;
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  color: var(--text-main);
+  background: #F8FAFC;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.65rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--navy-main);
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Mobile drawer */
+.hamburger-btn:hover {
+  background: #EDF2F7;
+  border-color: var(--navy-light);
+}
+
+/* Mobile Drawer */
 .mobile-menu {
   display: none;
   background-color: #FFFFFF;
   border-top: 1px solid var(--border-color);
-  padding: 1rem;
-  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.25rem 1.5rem 1.25rem;
+  box-shadow: 0 16px 24px -8px rgba(16, 45, 80, 0.15);
+  animation: mobileMenuSlide 0.2s ease-out;
+}
+
+@keyframes mobileMenuSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .mobile-menu.open {
@@ -264,11 +278,19 @@ img, svg {
 
 .mobile-nav-link {
   display: block;
-  padding: 0.75rem 0.5rem;
+  padding: 0.85rem 0.5rem;
   font-weight: 600;
-  font-size: 1rem;
-  color: #334155;
+  font-size: 0.95rem;
+  color: var(--navy-main);
   border-bottom: 1px solid #F1F5F9;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  color: var(--orange-main);
+  background-color: #FFF7ED;
+  padding-left: 0.85rem;
+  border-radius: 6px;
 }
 
 /* ============================================================
@@ -796,9 +818,19 @@ img, svg {
 /* ============================================================
    RESPONSIVE MEDIA QUERIES
    ============================================================ */
+
+/* Utility Visibility Classes */
+.hide-sm {
+  display: inline-flex;
+}
+.show-sm {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
@@ -806,25 +838,193 @@ img, svg {
   .grid-5 {
     grid-template-columns: repeat(3, 1fr);
   }
+  .grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-menu, .top-bar-left .hide-sm {
+  .hide-sm {
+    display: none !important;
+  }
+  .show-sm {
+    display: block !important;
+  }
+  
+  /* Top Bar */
+  .top-bar-left {
+    display: none;
+  }
+  .top-bar-right {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.725rem;
+  }
+  .top-bar-right .top-link {
+    font-size: 0.725rem;
+    white-space: nowrap;
+  }
+
+  /* Header & Navigation */
+  .nav-content {
+    padding: 0.65rem 0;
+  }
+  .nav-logo img {
+    height: 38px;
+  }
+  .nav-menu {
     display: none;
   }
   .hamburger-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  /* Typography */
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    line-height: 1.22;
   }
-  .grid-3, .grid-2, .grid-5, .grid-6, .footer-grid, .form-row {
-    grid-template-columns: 1fr;
+  .hero-desc {
+    font-size: 0.925rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+  .section-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+  .section-desc {
+    font-size: 0.875rem;
+  }
+
+  /* Spacing */
+  .section {
+    padding: 3rem 0;
+  }
+  .hero {
+    padding: 2.5rem 0 3rem 0;
   }
   .hero-features {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .hero-btns .btn-primary,
+  .hero-btns .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.25rem;
+  }
+
+  /* Layout Grids */
+  .grid-3, .grid-2, .grid-5, .grid-6, .footer-grid, .form-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Product Cards on Mobile */
+  .product-img {
+    height: 200px;
+  }
+  .product-body {
+    padding: 1.25rem;
+  }
+  .product-name {
+    font-size: 1.15rem;
+  }
+  .product-footer {
+    padding: 1.25rem;
+    padding-top: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .product-footer .btn-navy,
+  .product-footer .btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Form Card on Mobile */
+  .form-card {
+    padding: 1.25rem;
+  }
+
+  /* Cards & General Containers */
+  .adv-card, .step-card {
+    padding: 1.25rem;
+  }
+  .cta-banner {
+    padding: 2.5rem 1.25rem;
+  }
+  .cta-banner h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Inline Padded Boxes in Detail Pages */
+  div[style*="padding: 2.5rem"],
+  div[style*="padding:2.5rem"],
+  div[style*="padding: 2rem"],
+  div[style*="padding:2rem"] {
+    padding: 1.25rem !important;
+  }
+  h1[style*="font-size: 2.5rem"],
+  h1[style*="font-size:2.5rem"],
+  h1[style*="font-size: 2.25rem"],
+  h1[style*="font-size:2.25rem"] {
+    font-size: 1.6rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Floating WhatsApp on Mobile: Compact Circular FAB Button */
+  .whatsapp-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+  .whatsapp-float span:last-child {
+    display: none;
+  }
+  .whatsapp-float span:first-child {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar {
+    display: none; /* Keep mobile viewport clean */
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .hero-title {
+    font-size: 1.65rem;
+  }
+  .section-title {
+    font-size: 1.45rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 }
