@@ -132,9 +132,19 @@ img, svg {
   padding: 0.85rem 0;
 }
 
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
 .nav-logo img {
-  height: 44px;
+  height: 54px;
   width: auto;
+  transition: transform 0.2s ease;
+}
+
+.nav-logo:hover img {
+  transform: scale(1.02);
 }
 
 .nav-menu {
@@ -875,7 +885,7 @@ img, svg {
     padding: 0.65rem 0;
   }
   .nav-logo img {
-    height: 38px;
+    height: 46px;
   }
   .nav-menu {
     display: none;
